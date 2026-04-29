@@ -16,8 +16,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Choose the model based on aiMode
   // Default to OpenAI GPT-4o-mini if "Cơ bản", otherwise use gpt-4o or deepseek
   const isAdvanced = data.aiMode === 'Nâng cao';
-  const apiKey = isAdvanced && DEEPSEEK_API_KEY ? DEEPSEEK_API_KEY : OPENAI_API_KEY;
-  const baseUrl = isAdvanced && DEEPSEEK_API_KEY ? 'https://api.deepseek.com/v1/chat/completions' : 'https://api.openai.com/v1/chat/completions';
+  const rawApiKey = isAdvanced && DEEPSEEK_API_KEY ? DEEPSEEK_API_KEY : OPENAI_API_KEY;
+  const apiKey = rawApiKey?.trim().replace(/^"|"$/g, ''); // Trim and remove accidental quotes
+  const baseUrl = isAdvanced && DEEPSEEK_API_KEY ? 'https://api.deepseek.com/chat/completions' : 'https://api.openai.com/v1/chat/completions';
   const model = isAdvanced && DEEPSEEK_API_KEY ? 'deepseek-chat' : (isAdvanced ? 'gpt-4o' : 'gpt-4o-mini');
 
   if (!apiKey) {
