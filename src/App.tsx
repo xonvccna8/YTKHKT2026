@@ -24,38 +24,43 @@ function Layout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col">
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+    <div className="min-h-screen text-slate-200 font-sans flex flex-col relative">
+      <header className="glass-panel sticky top-0 z-50 border-b border-teal-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center gap-2">
-                <Lightbulb className="h-8 w-8 text-blue-600" />
-                <span className="font-bold text-xl tracking-tight text-gray-900 hidden sm:block">KHKT Idea Champion</span>
+              <Link to="/" className="flex items-center gap-2 group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-teal-400 blur-md opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                  <Lightbulb className="h-8 w-8 text-teal-300 relative z-10" />
+                </div>
+                <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-teal-200 to-cyan-200 bg-clip-text text-transparent hidden sm:block">
+                  KHKT Idea Champion
+                </span>
               </Link>
             </div>
             <nav className="flex items-center gap-1 sm:gap-4">
-              <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2 ${location.pathname === '/' ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-100'}`}>
+              <Link to="/" className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all ${location.pathname === '/' ? 'bg-teal-500/20 text-teal-300 shadow-[0_0_15px_rgba(20,184,166,0.15)]' : 'text-slate-400 hover:text-teal-200 hover:bg-slate-800/50'}`}>
                 <Lightbulb className="w-4 h-4" /> <span className="hidden sm:inline">Tạo Ý Tưởng</span>
               </Link>
-              <Link to="/history" className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2 ${location.pathname === '/history' ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-100'}`}>
+              <Link to="/history" className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all ${location.pathname === '/history' ? 'bg-teal-500/20 text-teal-300 shadow-[0_0_15px_rgba(20,184,166,0.15)]' : 'text-slate-400 hover:text-teal-200 hover:bg-slate-800/50'}`}>
                 <History className="w-4 h-4" /> <span className="hidden sm:inline">Lịch Sử</span>
               </Link>
-              <Link to="/favorites" className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2 ${location.pathname === '/favorites' ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-100'}`}>
+              <Link to="/favorites" className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all ${location.pathname === '/favorites' ? 'bg-teal-500/20 text-teal-300 shadow-[0_0_15px_rgba(20,184,166,0.15)]' : 'text-slate-400 hover:text-teal-200 hover:bg-slate-800/50'}`}>
                 <Heart className="w-4 h-4" /> <span className="hidden sm:inline">Yêu Thích</span>
               </Link>
-              <button onClick={handleLogout} className="ml-2 px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-50 flex items-center gap-2 transition-colors">
+              <button onClick={handleLogout} className="ml-2 px-3 py-2 rounded-lg text-sm font-medium text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 flex items-center gap-2 transition-all">
                 <LogOut className="w-4 h-4" /> <span className="hidden sm:inline">Đăng Xuất</span>
               </button>
             </nav>
           </div>
         </div>
       </header>
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {children}
       </main>
-      <footer className="bg-white border-t border-gray-200 py-6 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+      <footer className="glass-panel border-t border-teal-500/20 py-6 mt-auto relative z-10">
+        <div className="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500">
           <p>© 2026 KHKT Idea Champion - Hỗ trợ học sinh nghiên cứu khoa học kỹ thuật</p>
         </div>
       </footer>

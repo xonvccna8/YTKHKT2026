@@ -6,7 +6,7 @@ export const Card = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, ...props }, ref) => (
     <motion.div
       ref={ref}
-      className={cn("rounded-xl border border-gray-200 bg-white text-gray-950 shadow-sm", className)}
+      className={cn("rounded-2xl glass-panel text-slate-200 overflow-hidden", className)}
       {...props}
     />
   )
@@ -22,7 +22,7 @@ CardHeader.displayName = "CardHeader";
 
 export const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h3 ref={ref} className={cn("font-semibold leading-none tracking-tight", className)} {...props} />
+    <h3 ref={ref} className={cn("font-bold leading-none tracking-tight text-teal-50", className)} {...props} />
   )
 );
 CardTitle.displayName = "CardTitle";

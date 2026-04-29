@@ -85,11 +85,11 @@ export default function IdeaFormPage() {
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-          <Sparkles className="w-6 h-6 text-yellow-500" />
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent flex items-center gap-2">
+          <Sparkles className="w-8 h-8 text-teal-400" />
           Khởi Tạo Ý Tưởng Mới
         </h2>
-        <p className="text-gray-600 mt-1">Cung cấp thông tin chi tiết để AI tạo ra các ý tưởng phù hợp nhất với nguồn lực và mục tiêu của bạn.</p>
+        <p className="text-teal-100/70 mt-2 text-lg">Cung cấp thông tin chi tiết để AI tạo ra các ý tưởng phù hợp nhất với nguồn lực và mục tiêu của bạn.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -103,10 +103,10 @@ export default function IdeaFormPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="level">Cấp học</Label>
-                    <select id="level" name="level" value={formData.level} onChange={handleChange} className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                      <option value="Tiểu học">Tiểu học</option>
-                      <option value="THCS">THCS</option>
-                      <option value="THPT">THPT</option>
+                    <select id="level" name="level" value={formData.level} onChange={handleChange} className="flex h-11 w-full rounded-lg border border-teal-500/20 bg-slate-900/50 px-3 py-2 text-sm text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500">
+                      <option value="Tiểu học" className="bg-slate-800">Tiểu học</option>
+                      <option value="THCS" className="bg-slate-800">THCS</option>
+                      <option value="THPT" className="bg-slate-800">THPT</option>
                     </select>
                   </div>
                   <div className="space-y-2">
@@ -115,11 +115,11 @@ export default function IdeaFormPage() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="target">Mục tiêu dự thi</Label>
-                    <select id="target" name="target" value={formData.target} onChange={handleChange} className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                      <option value="Cấp trường">Cấp trường</option>
-                      <option value="Cấp huyện">Cấp huyện</option>
-                      <option value="Cấp tỉnh">Cấp tỉnh</option>
-                      <option value="Cấp quốc gia">Cấp quốc gia</option>
+                    <select id="target" name="target" value={formData.target} onChange={handleChange} className="flex h-11 w-full rounded-lg border border-teal-500/20 bg-slate-900/50 px-3 py-2 text-sm text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500">
+                      <option value="Cấp trường" className="bg-slate-800">Cấp trường</option>
+                      <option value="Cấp huyện" className="bg-slate-800">Cấp huyện</option>
+                      <option value="Cấp tỉnh" className="bg-slate-800">Cấp tỉnh</option>
+                      <option value="Cấp quốc gia" className="bg-slate-800">Cấp quốc gia</option>
                     </select>
                   </div>
                 </div>
@@ -144,10 +144,10 @@ export default function IdeaFormPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="techLimit">Giới hạn công nghệ</Label>
-                    <select id="techLimit" name="techLimit" value={formData.techLimit} onChange={handleChange} className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                      <option value="Cơ bản">Cơ bản (Mô hình vật lý, mạch đơn giản)</option>
-                      <option value="Trung bình">Trung bình (Arduino, app cơ bản, dữ liệu nhỏ)</option>
-                      <option value="Nâng cao">Nâng cao (AI, IoT, phân tích dữ liệu lớn, sinh học phân tử)</option>
+                    <select id="techLimit" name="techLimit" value={formData.techLimit} onChange={handleChange} className="flex h-11 w-full rounded-lg border border-teal-500/20 bg-slate-900/50 px-3 py-2 text-sm text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500">
+                      <option value="Cơ bản" className="bg-slate-800">Cơ bản (Mô hình vật lý, mạch đơn giản)</option>
+                      <option value="Trung bình" className="bg-slate-800">Trung bình (Arduino, app cơ bản, dữ liệu nhỏ)</option>
+                      <option value="Nâng cao" className="bg-slate-800">Nâng cao (AI, IoT, phân tích dữ liệu lớn, sinh học phân tử)</option>
                     </select>
                   </div>
                   <div className="space-y-2">
@@ -178,19 +178,19 @@ export default function IdeaFormPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Lĩnh vực chính</CardTitle>
-                <p className="text-xs text-gray-500">Chọn 1 hoặc nhiều lĩnh vực (22 lĩnh vực chuẩn)</p>
+                <p className="text-xs text-teal-200/50">Chọn 1 hoặc nhiều lĩnh vực (22 lĩnh vực chuẩn)</p>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 max-h-[300px] overflow-y-auto pr-2 pb-2">
+                <div className="flex flex-wrap gap-2 max-h-[300px] overflow-y-auto pr-2 pb-2 custom-scrollbar">
                   {FIELDS.map(field => (
                     <button
                       key={field}
                       type="button"
                       onClick={() => handleFieldToggle(field)}
-                      className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+                      className={`px-3 py-1.5 text-xs rounded-full border transition-all ${
                         formData.fields.includes(field)
-                          ? 'bg-blue-100 border-blue-500 text-blue-700 font-medium'
-                          : 'bg-white border-gray-300 text-gray-600 hover:border-blue-300 hover:bg-blue-50'
+                          ? 'bg-teal-500/20 border-teal-400 text-teal-300 font-medium shadow-[0_0_10px_rgba(20,184,166,0.2)]'
+                          : 'bg-slate-900/50 border-teal-500/10 text-slate-400 hover:border-teal-400/50 hover:bg-teal-500/10 hover:text-teal-200'
                       }`}
                     >
                       {field}
@@ -200,19 +200,22 @@ export default function IdeaFormPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-blue-100 bg-blue-50/50">
+            <Card className="border-teal-500/40 bg-teal-950/30 backdrop-blur-md shadow-[0_0_30px_rgba(20,184,166,0.1)]">
               <CardHeader>
-                <CardTitle className="text-lg">Cấu hình AI</CardTitle>
+                <CardTitle className="text-lg text-teal-300 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-teal-400" />
+                  Cấu hình AI
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <Label>Chế độ suy luận</Label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
                       onClick={() => setFormData({ ...formData, aiMode: 'Cơ bản' })}
-                      className={`px-3 py-2 text-sm rounded-md border transition-colors ${
-                        formData.aiMode === 'Cơ bản' ? 'bg-white border-blue-500 text-blue-700 shadow-sm font-medium' : 'bg-transparent border-gray-300 text-gray-600'
+                      className={`px-3 py-2 text-sm rounded-lg border transition-all ${
+                        formData.aiMode === 'Cơ bản' ? 'bg-teal-500/20 border-teal-400 text-teal-300 shadow-[0_0_15px_rgba(20,184,166,0.2)] font-medium' : 'bg-slate-900/50 border-teal-500/20 text-slate-400 hover:border-teal-500/50'
                       }`}
                     >
                       Cơ bản (Nhanh)
@@ -220,21 +223,21 @@ export default function IdeaFormPage() {
                     <button
                       type="button"
                       onClick={() => setFormData({ ...formData, aiMode: 'Nâng cao' })}
-                      className={`px-3 py-2 text-sm rounded-md border transition-colors ${
-                        formData.aiMode === 'Nâng cao' ? 'bg-white border-purple-500 text-purple-700 shadow-sm font-medium' : 'bg-transparent border-gray-300 text-gray-600'
+                      className={`px-3 py-2 text-sm rounded-lg border transition-all ${
+                        formData.aiMode === 'Nâng cao' ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] font-medium' : 'bg-slate-900/50 border-teal-500/20 text-slate-400 hover:border-teal-500/50'
                       }`}
                     >
                       Nâng cao (Sâu)
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500 mt-2">
-                    {formData.aiMode === 'Cơ bản' ? 'Sử dụng GPT-5.4-mini để tạo nhanh ý tưởng.' : 'Sử dụng mô hình thông minh nhất (GPT-5.4 / DeepSeek V4 Pro) để phân tích chuyên sâu.'}
+                  <p className="text-xs text-teal-200/60 mt-2">
+                    {formData.aiMode === 'Cơ bản' ? 'Sử dụng mô hình nhỏ gọn để tạo nhanh ý tưởng sơ bộ.' : 'Sử dụng mô hình siêu việt DeepSeek V4 Pro / GPT-5.4 để phân tích chuyên sâu, đa chiều.'}
                   </p>
                 </div>
               </CardContent>
               <CardFooter className="flex-col gap-2">
                 {error && (
-                  <div className="w-full p-3 bg-red-50 text-red-600 text-sm rounded-md border border-red-200 mb-2">
+                  <div className="w-full p-3 bg-rose-500/10 text-rose-400 text-sm rounded-lg border border-rose-500/30 mb-2">
                     {error}
                   </div>
                 )}

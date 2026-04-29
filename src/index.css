@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-secondary: #10b981;
+  --color-primary: #0d9488;
+  --color-primary-dark: #0f766e;
+  --color-secondary: #14b8a6;
+  --color-accent: #06b6d4;
 }
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-slate-950 text-slate-100 min-h-screen;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(20, 184, 166, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+  background-attachment: fixed;
 }
 
 @keyframes blob {
@@ -18,8 +23,18 @@ body {
   100% { transform: translate(0px, 0px) scale(1); }
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 .animate-blob {
-  animation: blob 7s infinite;
+  animation: blob 10s infinite alternate;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 .animation-delay-2000 {
@@ -28,4 +43,8 @@ body {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.glass-panel {
+  @apply bg-slate-900/50 backdrop-blur-xl border border-teal-500/20 shadow-[0_8px_32px_0_rgba(20,184,166,0.1)];
 }
